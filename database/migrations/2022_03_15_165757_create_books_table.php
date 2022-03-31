@@ -1,0 +1,44 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('books', function (Blueprint $table) {
+            $table->id();
+            $table->string("title");
+            $table->string("slug");
+            $table->string("category");
+            $table->string("type");
+            $table->string("image");
+            $table->string('file');
+            $table->integer("season");
+            $table->longText("description");
+            $table->integer("downloads_count");
+            $table->integer("views");
+            $table->float("rate");
+            // $table->integer('pubisher_id');
+            $table->softDeletes();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('books');
+    }
+};

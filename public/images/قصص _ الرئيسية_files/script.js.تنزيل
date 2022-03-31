@@ -1,0 +1,71 @@
+var cookies = document.cookie.split('cookies=')[1];
+
+function s(s){
+    var sd = document.querySelector(s);
+    if(sd === undefined || sd === null){
+        return document.querySelector('.null');
+    }else{
+        return sd;
+    }
+}
+
+document.onreadystatechange = function(){
+    if(this.readyState === "complete"){
+        if(window.innerWidth <= 1200){
+            s('.side > i').click();
+        }
+
+        setTimeout(function(){
+            if(cookies != 'true'){
+                s('.cookies').classList.add('showen'); 
+            }
+        }, 1000)
+    }
+}
+
+function hideSide(div){
+    div.parentElement.classList.toggle('hidden');
+    s('.QMcontainer').classList.toggle('opened');
+}
+
+function activeTgl(div){
+    if(div.innerHTML === "الكل"){
+        var actives = div.parentElement.querySelectorAll('.active');
+        actives.forEach(function(active){
+            active.classList.remove('active');
+        });
+        div.classList.add('active');
+    }else{
+        var firstElement = div.parentElement.querySelector('span');
+        if(firstElement.innerHTML === "الكل"){
+            firstElement.classList.remove('active');
+            div.classList.toggle('active');
+
+            var actives = div.parentElement.querySelectorAll('.active');
+            var spans = div.parentElement.querySelectorAll('span');
+            if(actives.length === spans.length - 1){
+                activeTgl(spans[0]);
+            }
+        }else{
+            div.classList.toggle('active');
+            s(div.dataset.type).classList.toggle('hidden');
+        }
+    }
+}
+
+function hide(div){
+    div.classList.add('hidden');
+    s('body').classList.remove('unscrolable');
+}
+
+function closetgl(div){
+    div.parentElement.classList.toggle('closed');
+    
+    if(div.parentElement.classList.contains('closed')){
+        div.parentElement.classList.toggle('closed1');
+    }else{
+        setTimeout(function(){
+            div.parentElement.classList.toggle('closed1');
+        }, 300)
+    }
+}
