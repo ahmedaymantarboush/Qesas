@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style/style.css">
+    <!-- description -->
+    <title>قصص | الرئيسية</title>
+</head>
+<body>
+    <!-- header -->
+    <header class="shad">
+        <a href="#">الرئيسية</a>
+        <a href="#">قصص</a>
+        <a href="#">متسلسلات</a>
+        <a><i class="fal fa-search"></i> البحث </a>
+        <a><i class="fal fa-heart"></i> المفضله </a>
+    </header>
+    <header>
+        <a href="#"><i class="fal fa-home-alt"></i></a>
+        <a href="#"><i class="fal fa-window-restore"></i></a>
+        <a href="#"><i class="fal fa-boxes"></i></a>
+        <a><i class="fal fa-search"></i></a>
+        <a><i class="fal fa-heart"></i></a>
+    </header>
+    <div>
+    </div>
+
+    <div class="container">
+        <!-- side -->
+        <section class="shad side">
+            <i onclick="hideSide(this)" class="fal fa-arrow-right"><span></span></i>
+            <div>
+                <h3>الحساب</h2>
+                <span onclick="s('.login').classList.remove('hidden');s('body').classList.add('unscrolable');"><i class="fal fa-sign-in"></i> دخول </span>
+                <span onclick="s('.signup').classList.remove('hidden');s('body').classList.add('unscrolable');"><i class="fal fa-plus-square"></i> جديد </span>
+            </div>
+            
+            <div class="hidden" class="closed closed1">
+                <h3 onclick="closetgl(this)"> <i class="fal fa-chevron-up"></i> منشوراتك</h2>
+                <a href="#">قصه جديده</a>
+                <a href="#">متسلسله جديده</a>
+                <a href="#">متابعه متسلسله</a>
+            </div>
+
+            <div class="closed closed1">
+                <h3 onclick="closetgl(this)"> <i class="fal fa-chevron-up"></i> النوع</h2>
+
+                <span class="active" onclick="activeTgl(this)">الكل</span>
+                <span onclick="activeTgl(this)">اثاره</span>
+                <span onclick="activeTgl(this)">اكشن</span>
+                <span onclick="activeTgl(this)">تاريخ</span>
+                <span onclick="activeTgl(this)">جريمه</span>
+                <span onclick="activeTgl(this)">حرب</span>
+                <span onclick="activeTgl(this)">رومانسي</span>
+                <span onclick="activeTgl(this)">رياضي</span>
+                <span onclick="activeTgl(this)">سيره ذاتيه</span>
+                <span onclick="activeTgl(this)">عائلي</span>
+                <span onclick="activeTgl(this)">غريبه</span>
+                <span onclick="activeTgl(this)">غموض</span>
+                <span onclick="activeTgl(this)">كوميديا</span>
+                <span onclick="activeTgl(this)">مغامره</span>
+                <span onclick="activeTgl(this)">موسيقي</span>
+                <span onclick="activeTgl(this)">وثائقي</span>
+            </div>
+        </section>
+
+        <!-- qesas container -->
+        <section class="QMcontainer">
+            <section class="Qcontainer">
+                <h2>القصص</h2>
+                <article class="qesa">
+                    <div>
+                        <img src="images/images3.jpg" alt="عنوان القصه">
+                        <i class="fa fa-star"><p>التقييم</p></i>
+                        <span>5</span>
+                        <div>
+                            <a ><i class="fal fa-heart"></i></a>
+                            <a href="#"><i class="fal fa-download"></i></a>
+                            <a href="#"><i class="fal fa-eye"></i></a>
+                            <a ><i class="fal fa-exclamation"></i></a>
+                        </div>
+                    </div>
+                    <h3><a href="#">عنوان القصه</a></h3>
+                </article>
+
+                <article class="qesa">
+                    <div>
+                        <img src="images/images1.jpg" alt="عنوان القصه">
+                        <i class="fa fa-star"><p>التقييم</p></i>
+                        <span>5</span>
+                        <div>
+                            <a ><i class="fal fa-heart"></i></a>
+                            <a href="#"><i class="fal fa-download"></i></a>
+                            <a href="#"><i class="fal fa-eye"></i></a>
+                            <a ><i class="fal fa-exclamation"></i></a>
+                        </div>
+                    </div>
+                    <h3><a href="#">عنوان القصه</a></h3>
+                </article>
+
+                <article class="qesa">
+                    <div>
+                        <img src="images/images2.jpg" alt="عنوان القصه">
+                        <i class="fa fa-star"><p>التقييم</p></i>
+                        <span>5</span>
+                        <div>
+                            <a ><i class="fal fa-heart"></i></a>
+                            <a href="#"><i class="fal fa-download"></i></a>
+                            <a href="#"><i class="fal fa-eye"></i></a>
+                            <a ><i class="fal fa-exclamation"></i></a>
+                        </div>
+                    </div>
+                    <h3><a href="#">عنوان القصه</a></h3>
+                </article>
+
+                <article class="qesa">
+                    <div>
+                        <img src="images/images4.jpg" alt="عنوان القصه">
+                        <i class="fa fa-star"><p>التقييم</p></i>
+                        <span>5</span>
+                        <div>
+                            <a ><i class="fal fa-heart"></i></a>
+                            <a href="#"><i class="fal fa-download"></i></a>
+                            <a href="#"><i class="fal fa-eye"></i></a>
+                            <a ><i class="fal fa-exclamation"></i></a>
+                        </div>
+                    </div>
+                    <h3><a href="#">عنوان القصه</a></h3>
+                </article>
+
+                <article class="qesa">
+                    <div>
+                        <img src="images/images1.jpg" alt="عنوان القصه">
+                        <i class="fa fa-star"><p>التقييم</p></i>
+                        <span>5</span>
+                        <div>
+                            <a ><i class="fal fa-heart"></i></a>
+                            <a href="#"><i class="fal fa-download"></i></a>
+                            <a href="#"><i class="fal fa-eye"></i></a>
+                            <a ><i class="fal fa-exclamation"></i></a>
+                        </div>
+                    </div>
+                    <h3><a href="#">عنوان القصه</a></h3>
+                </article>
+
+                <article class="qesa">
+                    <div>
+                        <img src="images/images6.jpg" alt="عنوان القصه">
+                        <i class="fa fa-star"><p>التقييم</p></i>
+                        <span>5</span>
+                        <div>
+                            <a ><i class="fal fa-heart"></i></a>
+                            <a href="#"><i class="fal fa-download"></i></a>
+                            <a href="#"><i class="fal fa-eye"></i></a>
+                            <a ><i class="fal fa-exclamation"></i></a>
+                        </div>
+                    </div>
+                    <h3><a href="#">عنوان القصه</a></h3>
+                </article>
+
+                <article class="qesa">
+                    <div>
+                        <img src="images/images6.jpg" alt="عنوان القصه">
+                        <i class="fa fa-star"><p>التقييم</p></i>
+                        <span>5</span>
+                        <div>
+                            <a ><i class="fal fa-heart"></i></a>
+                            <a href="#"><i class="fal fa-download"></i></a>
+                            <a href="#"><i class="fal fa-eye"></i></a>
+                            <a ><i class="fal fa-exclamation"></i></a>
+                        </div>
+                    </div>
+                    <h3><a href="#">عنوان القصه</a></h3>
+                </article>
+
+                <article class="qesa">
+                    <div>
+                        <img src="images/images7.jpg" alt="عنوان القصه">
+                        <i class="fa fa-star"><p>التقييم</p></i>
+                        <span>5</span>
+                        <div>
+                            <a ><i class="fal fa-heart"></i></a>
+                            <a href="#"><i class="fal fa-download"></i></a>
+                            <a href="#"><i class="fal fa-eye"></i></a>
+                            <a ><i class="fal fa-exclamation"></i></a>
+                        </div>
+                    </div>
+                    <h3><a href="#">عنوان القصه</a></h3>
+                </article>
+
+                <article class="qesa">
+                    <div>
+                        <img src="images/images8.jpg" alt="عنوان القصه">
+                        <i class="fa fa-star"><p>التقييم</p></i>
+                        <span>5</span>
+                        <div>
+                            <a ><i class="fal fa-heart"></i></a>
+                            <a href="#"><i class="fal fa-download"></i></a>
+                            <a href="#"><i class="fal fa-eye"></i></a>
+                            <a ><i class="fal fa-exclamation"></i></a>
+                        </div>
+                    </div>
+                    <h3><a href="#">عنوان القصه</a></h3>
+                </article>
+
+                <article class="qesa">
+                    <div>
+                        <img src="images/images 9.jpg" alt="عنوان القصه">
+                        <i class="fa fa-star"><p>التقييم</p></i>
+                        <span>5</span>
+                        <div>
+                            <a ><i class="fal fa-heart"></i></a>
+                            <a href="#"><i class="fal fa-download"></i></a>
+                            <a href="#"><i class="fal fa-eye"></i></a>
+                            <a ><i class="fal fa-exclamation"></i></a>
+                        </div>
+                    </div>
+                    <h3><a href="#">عنوان القصه</a></h3>
+                </article>
+            </section>
+        </section>
+    </div>
+
+    <div class="null"></div>
+</body>
+<script src="js/script.js"></script>
+</html>

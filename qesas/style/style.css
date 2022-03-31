@@ -1,0 +1,1263 @@
+@import url("../css/all.min.css");
+@import url("../css/v4-shims.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600&display=swap');
+*{
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+:focus{
+    outline: none !important;
+}
+body{
+    background-color: #eee;
+    overflow: overlay;
+}
+body.unscrolable{
+    overflow: hidden;
+}
+::-webkit-scrollbar{
+    width: 7px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #555;
+}
+.shad{
+    box-shadow: #000 0px 0px 6px -5px;
+}
+a{
+    cursor: pointer;
+    color: #000;
+}
+.null{
+    position: fixed;
+    top: 100000px;
+}
+.fa-heart{
+    color: #b30000 !important;
+}
+
+/*  */
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="text"],
+textarea,
+select{
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    line-height: 35px;
+    border: solid 1px #ddd;
+    background-color: #fff;
+    margin-bottom: 10px;
+    transition: .3s;
+}
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus{
+    background-color: #ddd;
+}
+input[type="email"]:focus::placeholder,
+input[type="password"]:focus::placeholder,
+input[type="text"]:focus::placeholder,
+input[type="url"]:focus::placeholder,
+textarea:focus::placeholder{
+    color: #111;
+}
+input[type="submit"],
+input[type="button"],
+button{
+    border: none;
+    width: 100%;
+    background-color: #030607;
+    color: #fff;
+    height: 35px;
+    line-height: 35px;
+    cursor: pointer;
+    transition: .3s;
+}
+textarea{
+    resize: none;
+    display: block;
+    height: 120px;
+    padding: 5px 10px;
+    line-height: 25px;
+}
+
+/*  */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    z-index: 10;
+}
+header > a{
+    position: relative;
+    color: #000;
+    width: 100px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    border-radius: 3px;
+    transition: .3s;
+    cursor: pointer;
+}
+header > a::before,
+.side > div > a::before,
+.side > div > span::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 3px;
+    background-color: #ccc;
+    border-radius: 5px;
+    transition: .3s;
+}
+header > a:hover::before,
+.side > div > a:hover::before,
+.side > div > span:hover::before{
+    width: 100%;
+}
+header > a i{
+    position: relative;
+    top: 1px;
+    left: 5px;
+}
+header:nth-of-type(2){
+    display: none;
+}
+header:nth-of-type(2) i{
+    position: static;
+    line-height: inherit;
+}
+header + div{
+    height: 50px;
+}
+
+
+/*  */
+.container{
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+/*  */
+.side{
+    position: fixed;
+    top: 110px;
+    right: 17px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    transition: .3s;
+    z-index: 2;
+}
+.side > div,
+.search > article > section > div{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-height: 500px;
+    transition: .3s ease-in-out;
+}
+.side > div.closed,
+.search > article > section > div.closed{
+    max-height: 32px;
+    margin-bottom: 5px;
+}
+.side > div.closed1,
+.search > article > section > div.closed1{
+    overflow: hidden;
+}
+.side > div:last-of-type,
+.search > article > section > div:last-of-type{
+    margin-bottom: -10px;
+    justify-content: space-between;
+}
+.side > div:last-of-type.closed,
+.search > article > section > div:last-of-type.closed{
+    margin-bottom: 10px !important;
+}
+.side > div.hidden,
+.search > article > section > div.hidden{
+    display: none;
+}
+.side > div > h3,
+.search > article > section > div > h3{
+    margin-bottom: 10px;
+    width: 100%;
+    padding-right: 15px;
+    position: relative;
+}
+.side > div > h3 > i,
+.search > article > section > div > h3 > i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    transition: .3s;
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+}
+.side > div > h3:hover i,
+.search > article > section > div > h3:hover i{
+    background-color: #e0e0e0;
+}
+.side > div.closed > h3 > i,
+.search > article > section > div.closed > h3 > i{
+    transform: translateY(-50%) rotate(180deg);
+}
+.side > div > span,
+.side > div > a,
+.search > article > section > div > span{
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 3px;
+    transition: 0.3s;
+    position: relative;
+}
+.side > div > a{
+    width: 100%;
+    margin: 5px 0;
+    background-color: #ececec;
+}
+.side > div > a:hover{
+    background-color: #e0e0e0;
+}
+.side > div > a::before,
+.side > div:last-of-type > span::before,
+.search > article > section > div > span::before{
+    transform-origin: center;
+    width: 100%;
+    transform: translateX(-50%) scaleX(0);
+}
+.side > div > a:hover::before{
+    transform: translateX(-50%) scaleX(1);
+}
+.side > div:last-of-type > span,
+.search > article > section > div:last-of-type > span{
+    width: calc(50% - 5px);
+    margin-bottom: 10px;
+    background-color: #eee;
+    text-align: center;
+    font-size: 13px;
+    padding: 0px;
+    padding-right: 30px;
+    text-align: right;
+    height: 30px;
+    line-height: 30px;
+}
+.side > div:last-of-type > span:hover,
+.search > article > section > div:last-of-type > span:hover{
+    background-color: #e0e0e0;
+}
+.side > div:last-of-type > span::after,
+.search > article > section > div:last-of-type > span::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: scale(0) translateY(-50%);
+    opacity: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: .3s;
+
+    
+}
+.side > div:last-of-type > span.active,
+.search > article > section > div:last-of-type > span.active{
+    background-color: #00579c;
+    color: #fff;
+}
+.side > div:last-of-type > span.active::before,
+.search > article > section > div:last-of-type > span.active::before{
+    transform: translateX(-50%) scaleX(1);
+}
+.side > div:last-of-type > span.active::after,
+.search > article > section > div:last-of-type > span.active::after{
+    transform: scale(1) translateY(-50%);
+    opacity: 1;
+}
+.side > div > span.active,
+.search > article > section > div > span.active{
+    background-color: #ccc;
+}
+.side > div > span.active::before,
+.search > article > section > div:last-of-type > span.active::before{
+    width: 100%;
+}
+.side > i{
+    transition: .3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    left: -15px;
+    /* left: 205px; */
+    padding: 15px;
+    cursor: pointer;
+    background-color: #fff;
+    font-size: 20px;
+    /* box-shadow: #000 -1px -1px 6px -5px; */
+}
+.side > i::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.side > i:hover{
+    color: #555;
+}
+.side.hidden{
+    transform: translateX(calc(100% + 17px));
+}
+.side.hidden > i{
+    transform: translateY(-50%) translateX(-21px) rotate(-225deg);
+    left: -15px;
+}
+@media screen and (min-width: 1300px){
+    .side > i{
+        opacity: 0;
+        pointer-events: none;
+    }
+    .side{
+        position: absolute;
+        top: 60px;
+    }
+}
+
+/* QMcontainer */
+.QMcontainer{
+    width: calc(100% - 230px);
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: .3s;
+    max-width: 1100px;
+    transform: translateX(0%);
+}
+.QMcontainer.opened{
+    width: calc(100% - 10px);
+}
+.Mcontainer, .Qcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    justify-items: flex-start;
+}
+.Mcontainer.hidden, .Qcontainer.hidden{
+    display: none;
+}
+.Mcontainer > h2, .Qcontainer > h2{
+    width: calc(100% - 10px);
+    text-align: center;
+    margin-right: 10px;
+    height: 50px;
+    line-height: 50px;
+}
+.qesa{
+    width: calc(100% / 5 - 10px);
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: #000 0px 0px 6px -5px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+.qesa > div{
+    padding-top: calc(100% * 9 / 6);
+    overflow: hidden;
+    position: relative;
+}
+.qesa > div > img{
+    display: block;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+}
+.qesa > div > div{
+    top: 50%;
+    right: 0;
+    transform: translate(100% ,-50%);
+    position: absolute;
+    width: 35px;
+    background-color: #fff;
+    text-align: center;
+    transition: .3s;
+}
+.qesa:hover div > div{
+    transform: translate(0 ,-50%);
+}
+.qesa > div > div > a{
+    display: block;
+    line-height: 35px;
+    height: 35px;
+    line-height: 35px;
+    transition: .3s;
+    color: #000;
+}
+.qesa > div > div > a > i{
+    line-height: inherit;
+}
+.qesa > div > div > a:hover{
+    background-color: #e0e0e0;
+}
+.qesa > div > i,
+.fa-star{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    color: #ff9846;
+}
+.fa-star{
+    position: static;
+}
+.qesa > div > i + span{
+    position: absolute;
+    top: 13px;
+    left: 22px;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    pointer-events: none;
+}
+.qesa > div > i > p{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 90%);
+    font-size: 13px;
+    background-color: #ff9846;
+    border-radius: 2px;
+    color: #000;
+    padding: 3px 5px;
+    transition: .3s;
+    opacity: 0;
+    pointer-events: none;
+}
+.qesa > div > i:hover > p{
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(-50%, 115%);
+}
+.qesa > div > i > p::before{
+    content: "";
+    border: 5px solid transparent;
+    border-color: transparent transparent #ff9846 transparent;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -98%);
+}
+.qesa > h3 > a{
+    width: 100%;
+    font-size: 17px;
+    text-align: center;
+    color: #555;
+    display: block;
+    padding: 3px 0;
+    margin-top: 5px;
+    transition: .3s;
+}
+.qesa > h3 > a:hover{
+    color: #000;
+}
+.qesa > div > article{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    color: #fff;
+    background: linear-gradient(to top, #0009, #fff0);
+    padding: 0 10px;
+}
+.qesa > div > article > span{
+    color: #ff7300;
+    font-size: 18px;
+    font-weight: bold;
+}
+@media screen and (min-width: 1100px){
+    .QMcontainer{
+        transition: 0s;
+    }
+    .QMcontainer.opened{
+        width: calc(100% - 10px);
+        position: static;
+        margin: auto;
+    }
+}
+@media screen and (max-width: 1100px){
+    *{
+        cursor: default !important;
+    }
+    .QMcontainer {
+        position: static !important; 
+        width: calc(100% - 10px) !important;
+        transform: translateX(0%) !important;
+        margin: unset !important;
+    }
+    .side{
+        top: 100px;
+        right: 10px;
+    }
+}
+@media screen and (max-width: 850px){
+    .qesa {
+        width: calc(100% / 4 - 10px);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .QMcontainer{
+        padding-bottom: 50px;
+    }
+    header{
+        top: unset;
+        bottom: 0;
+        display: none;
+    }
+    header + div{
+        height: 0;
+    }
+    header:nth-of-type(2) {
+        display: flex;
+        font-size: 23px;
+    }
+    .qesa {
+        width: calc(100% / 3 - 10px);
+    }
+    .qesa > h3 > a{
+        font-size: 15px;
+    }
+    .Mcontainer > h2, .Qcontainer > h2{
+        font-size: 20px;
+    }
+    .side {
+        top: 50px;
+        right: 10px;
+    }
+}
+
+.floated{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0009;
+    z-index: 10;
+    transition: .3s;
+    transform: scale(1);
+}
+.floated.hidden{
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.1);
+}
+.floated > .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0009;
+    z-index: 1;
+}
+.floated > article:not(.overlay){
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    background-color: #eee;
+    padding: 10px;
+    padding-top: 5px;
+    min-width: 500px;
+    transform: translate(-50%, -50%);
+}
+.floated > article:not(.overlay) > i,
+.search > i{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: #ef0000;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    transition: .3s;
+    cursor: pointer;
+}
+.floated > article:not(.overlay) > i:hover,
+.search > i:hover{
+    background-color: #d90000;
+}
+.floated > article:not(.overlay) > h3,
+.search > h3{
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: right;
+    padding-right: 5px;}
+.floated > article:not(.overlay) button{
+    border: none;
+    width: 100%;
+    background-color: #202020;
+    color: #fff;
+    height: 35px;
+    line-height: 35px;
+    transition: .3s;
+} 
+.floated > article:not(.overlay) button i{
+    position: relative;
+    top: 2px;
+}
+.floated > article:not(.overlay) button:hover{
+    background-color: #000;
+}
+
+.floated.signing > article:not(.overlay) > form > p{
+    padding: 0px 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.floated.signing > article:not(.overlay) > form > article{
+    padding: 0px 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    position: relative;
+    padding-right: 30px;
+}
+.floated.signing > article:not(.overlay) > form > p > a,
+.floated.signing > article:not(.overlay) > form > p > span,
+.floated.signing > article:not(.overlay) > form > article a{
+    cursor: pointer;
+    color: #00579c;
+    transition: .3s;
+    font-weight: bold;
+}
+.floated.signing > article:not(.overlay) > form > p > a:hover,
+.floated.signing > article:not(.overlay) > form > p > span:hover,
+.floated.signing > article:not(.overlay) > form > article a:hover{
+    color: #007adb;
+}
+.floated.signing > article:not(.overlay) > form > article > input{
+    opacity: 0;
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    border-radius: 50%;
+    height: 16px;
+    right: 10px;
+    z-index: 10;
+}
+.floated.signing > article:not(.overlay) > form > article > input + span{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    border-radius: 50%;
+    height: 16px;
+    border: solid 2px #00579c;
+    background-color: #fff;
+    right: 10px;
+}
+.floated.signing > article:not(.overlay) > form > article > input + span::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #00579c;
+    transition: .3s;
+    opacity: 0;
+}
+.floated.signing > article:not(.overlay) > form > article > input:checked + span::before{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+.floated.signing > article:not(.overlay) > form > article > input + span + label{
+    display: block;
+}
+@media screen and (max-width: 768px){
+    .floated > article:not(.overlay){
+        min-width: 400px;
+    }
+    .floated.signing > article:not(.overlay) > form > article > input + span + label,
+    .floated.signing > article:not(.overlay) > form > p{
+        font-size: 13px;
+    }
+}
+
+.cookies{
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    width: 95%;
+    background-color: #444;
+    transform: translateX(-50%) translateY(calc(100% + 40px));
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 20px;
+    transition: .3s linear;
+    opacity: 0;
+}
+.cookies.showen{
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+.cookies > p{
+    margin-bottom: 10px;
+    text-align: center;
+    color: #fff;
+}
+.cookies > button{
+    background-color: #333;
+    width: 120px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.cookies > button:hover{
+    background-color: #222;    
+}
+@media screen and (max-width: 768px){
+    .cookies{
+        bottom: 60px;
+    }
+    .fav > article:not(.overlay)::-webkit-scrollbar{
+        width: 5px;
+    }
+    .qesa > div > div{
+        width: 30px;
+    }
+    .qesa > div > div > a{
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
+.fav > article:not(.overlay){
+    min-width: unset;
+    width: 100%;   
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.fav > article:not(.overlay) > .QMcontainer{
+    position: static;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.fav .Qcontainer,
+.fav .Mcontainer{
+    justify-content: space-around;
+}
+.fav .qesa{
+    margin-right: 0;
+    width: calc((100% - 50) / 5);
+}
+.fav .Mcontainer > h2,
+.fav .Qcontainer > h2{
+    height: 40px;
+    line-height: 40px;
+    background-color: #ccc;
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+/*  */
+.search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    z-index: 11;
+    padding: 10px;
+    transition: .3s;
+    pointer-events: all;
+    opacity: 1;
+    transform: scale(1);
+}
+.search.hidden{
+    transform: scale(1.1);
+    opacity: 0;
+    pointer-events: none;
+}
+.search > form{
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.search > form > input{
+    margin: 0;
+    padding-left: 35px;
+}
+.search > form > button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    position: absolute;
+    left: 150px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007adb;
+}
+.search > form > button:hover{
+    background-color: #00579c;
+}
+.search > form > button > i{
+    line-height: inherit;
+}
+.search > form > select{
+    width: 150px;
+    margin: 0;
+    margin-right: 30px;
+}
+.search > article{
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+.search > article > section{
+    width: 250px;
+    background-color: #fff;
+    padding: 10px;
+    transition: .3s;
+    z-index: 5;
+}
+.search > article > section > h2{
+    margin-bottom: 10px;
+    padding-right: 5px;
+    position: relative;
+}
+.search > article > section > h2 > i{
+    font-size: 18px;
+}
+.search > article > section > h2 > .float{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 30px;
+    line-height: 30px;
+    background-color: #ef0000;
+    color: #fff;
+    text-align: center;
+    transition: .3s;
+    display: none;
+}
+.search > article > section > h2 > .float.fa-filter{
+    opacity: 0;
+    pointer-events: none;
+}
+.search > article > section > h2 > .float:hover{
+    background-color: #d90000;
+}
+.search > article > div{
+    background-color: #fff;
+    height: calc(100vh - 127px);
+    margin-right: 10px;
+    overflow-y: auto;
+    padding: 10px 0;
+    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: calc(100% - 260px);
+    transition: .3s;
+}
+.search > article > div .qesa{
+    background-color: #eee;
+}
+
+@media screen and (max-width: 850px){
+    .search > article > section > h2{
+        margin-top: -7px;
+    }
+    .search > article > section > h2 > .float{
+        display: block;
+    }
+    .search > article > section > h2 > .float.hidden + .fa-filter{
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(-50%) translateX(-50px);
+        z-index: 10;
+        background-color: #444;
+    }
+    .search > article > section > h2 > .float.hidden{
+        opacity: 0;
+        pointer-events: none;
+    }
+    .search > article > section > h2 > .fa-filter:hover{
+        background-color: #202020 !important;
+    }
+    .search > article > section{
+        position: absolute;
+        transition: .3s;
+        right: 10px;
+    }
+    .search > article > section.hidden{
+        right: -250px;
+    }
+    .search > article > div{
+        width: 100%;
+    }
+    .search > form > select{
+        margin-right: 10px;
+    }
+    .search > form > button{
+        left: 110px;
+        line-height: 45px;
+        width: 45px;
+        height: 45px;
+    }
+    .search > form > input {
+        padding-left: 25px;
+    }
+}
+
+.esc{
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    max-width: 500px;
+    width: 98%;
+    text-align: center;
+    line-height: 80px;
+    transform: translateX(-50%);
+    background-color: #202020;
+    color: #fff;
+    border-radius: 25px;
+    pointer-events: none;
+    transition: .3s;
+    z-index: 100;
+}
+.esc > span{
+    display: inline-block;
+    color: #fff;
+    padding: 5px 25px;
+    background-color: #b30000;
+    line-height: normal;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+.esc.hidden{
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+/*  */
+.single{
+    margin-bottom: 50px;
+}
+.single > div{
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.single > div > article{
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #fff;
+}
+.single > div > article > h3{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.single > div > article > div{
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.single > div > article > div > i{
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    opacity: .5;
+    transition: .3s;
+}
+.single > div > article > div > i.active{
+    color: #ff7300;
+    opacity: 1
+}
+.single > div > article > button{
+    background-color: #333;
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+}
+.single > div > article > button:hover{
+    background-color: #111;
+}
+.single > div > section{
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    width: calc(100% - 20px);
+    margin: 0 auto;
+    align-items: flex-start;
+}
+.single > div > section > img{
+    width: 350px;
+    margin-left: 30px;
+}
+.single > div > section > article{
+    width: 100%;
+}
+.single > div > section > article > h3{
+    color: #444;
+    margin-bottom: 5px;
+    font-size: 23px;
+}
+.single > div > section > article > p{
+    color: #555;
+    white-space: pre-line;
+    margin-bottom: 20px;
+}
+.single > div > section > article > div{
+    display: flex;
+    flex-wrap: wrap;
+}
+.single > div > section > article > div > p {
+    position: relative;
+    color: #333;
+    width: calc(100% / 2);
+    margin-bottom: 15px;
+}
+.single > div > section > article > div > p > span {
+    color: #111;
+    background-color: #ccc;
+    border-radius: 5px;
+    padding: 1px 15px;
+    font-weight: bold;
+}
+
+/*  */
+.single > div > section > article > section{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.single > div > section > article > section > p{
+    width: calc(100% / 3 - 5px);
+    margin-bottom: 10px;
+    text-align: center;
+}
+.single > div > section > article > section > p > a > i{
+    background-color: #333;
+    width: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    color: #fff;
+    transition: .3s;
+    text-align: center;
+}
+.single > div > section > article > section > p > a > i:hover{
+    background-color: #111;
+}
+
+/*  */
+.single > div > section > article > .share{
+    width: 200px;
+    margin: 20px auto;
+    height: 200px;
+    position: relative;
+    transition: .3s;
+}
+.single > div > section > article > .share > i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    width: 45px;
+    line-height: 45px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    transition: .3s;
+    font-size: 20px;
+}
+.single > div > section > article > .share > i.fa-times{
+    opacity: 1;
+    pointer-events: none;
+}
+.single > div > section > article > .share > a > i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    width: 45px;
+    line-height: 45px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    transition: .3s;
+    font-size: 20px;
+}
+.single > div > section > article > .share > a:nth-of-type(1) > i{
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.single > div > section > article > .share > a:nth-of-type(3) > i{
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+.single > div > section > article > .share > a:nth-of-type(2) > i{
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.single > div > section > article > .share > a:nth-of-type(4) > i{
+    top: 50%;
+    left: 100%;
+    transform: translate(-100%, -50%);
+}
+/*  */
+.single > div > section > article > .share.closed{
+    transform: rotate(90deg);
+}
+.single > div > section > article > .share.closed > i.fa-times{
+    opacity: 0;
+}
+.single > div > section > article > .share.closed > i.fa-share{
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+.single > div > section > article > .share.closed > a > i{
+    opacity: 0;
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*  */
+.single > section{
+    max-width: 1200px;
+    width: 98%;
+    margin: 10px auto;
+    border-radius: 5px;
+    padding: 15px 25px;
+    border: 2px solid #c2c2c2;
+    background-color: #e0e0e0;
+    max-width: 1080px;
+}
+.single > section > h3{
+    margin-bottom: 10px;
+    position: relative;
+    color: #111;
+    padding-right: 20px;
+}
+.single > section > h3::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #111;
+}
+.single > section > p{
+    white-space: pre-line;
+    color: #333;
+}
+
+.single > article{
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+    width: 98%;
+    scroll-snap-type: x mandatory;	
+	overflow-x: scroll;
+}
+.single > article > .qesa{
+    min-width: calc(100% / 4.7 - 10px);
+    scroll-snap-align: start;
+}
+.single > article > .qesa:first-of-type{
+    margin-right: 0;
+}
+.single > article::-webkit-scrollbar{
+    height: 5px;
+}
+
+@media screen and (max-width: 850px){
+    .single > article > .qesa{
+        min-width: calc(100% / 3.7 - 10px);
+    }
+    .single > article::-webkit-scrollbar{
+        display: none;
+    }
+}
+@media screen and (max-width: 500px){
+    .single > article > .qesa{
+        min-width: calc(100% / 2.7 - 10px);
+    }
+    .single > div > section{
+        flex-wrap: wrap;
+    }
+    .single > div > section > img{
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    .single > div > section > article > div > p{
+        font-size: 15px;
+    }
+}
